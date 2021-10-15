@@ -3,17 +3,32 @@
     class="form-inline mt-4 d-flex justify-content-center"
     (ngSubmit)="handleFind()"
   >
-    <div class="form-group">
-      <label for="userName">User Name</label>
-      <input
-        [(ngModel)]="userName"
-        type="text"
-        id="userName"
-        class="form-control mx-sm-3"
-        name="userName"
-      />
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="userName" style="font-weight: 700;">User Name : </label> <br>
+              <small *ngIf="!user" id="emailHelp" class="form-text text-muted"
+                  >Enter Github User Name  e.g : rishi-live  </small
+                >
+            </div>
+            <div class="col-md-6">
+              <input
+                [(ngModel)]="userName"
+                type="text"
+                id="userName"
+                class="form-control mx-sm-2"
+                name="userName"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <button type="submit" class="btn btn-primary mb-2">Find User</button>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Find User</button>
   </form>
 
   <!-- to render error -->
